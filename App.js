@@ -11,7 +11,7 @@ class App extends Component {
       <ScrollView>  
       <SafeAreaView style={styles.container}>
       <View >
-        <Text>chirag kapadiya </Text>
+        <Text>chirag kapadiya  </Text>
        <Button style={styles.button}  title={this.state.myState}  onPress={this.updateState} >
          {this.state.myState}
         </Button>
