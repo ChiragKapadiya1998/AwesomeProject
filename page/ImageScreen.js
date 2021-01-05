@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet,ScrollView, View ,Image, Alert,TouchableOpacity,Button} from "react-native";
-import ImageDetils  from './ImageDetils';
+import ImageDetils  from './Components/ImageDetils';
 
 const  ImageScreen= ({navigation}) => {
     return (

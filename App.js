@@ -7,6 +7,10 @@ import ImageScreen from './page/ImageScreen';
 import ListScreen from "./page/ListScreen";
 import ButtonScreen from "./page/ButtonScreen";
 import Counter from './page/CounterScreen'
+import ColorScreen from './page/ColorScreen';
+import SquareScreen from './page/SquareScreen';
+import Reducer from './page/Reducer';
+import Datafetch from './page/Datafetch';
 const Stack = createStackNavigator();
 class App extends Component {
 
@@ -20,21 +24,12 @@ class App extends Component {
         <Stack.Screen name="Buttons" component={ButtonScreen} />
         <Stack.Screen name="DemoScreen" component={Demo} />
         <Stack.Screen name="CounterScreen" component={Counter} />
+        <Stack.Screen name="ColorScreen" component={ColorScreen} />
+        <Stack.Screen name="SquareScreen" component={SquareScreen} />
+        <Stack.Screen name="ReducerScreen" component={Reducer} />
+        <Stack.Screen name="Datafetch" component={Datafetch} />
       </Stack.Navigator>
     </NavigationContainer>
-
-
-      // <ScrollView>  
-      // <SafeAreaView >
-      //   <View >
-      //     <Text>chirag kapadiya  </Text>
-      //   </View>
-      //     <ListScreen/>
-      //     {/* <ImageScreen/> */}
-      //     {/* <Demo/> */}
-      //     {/* <HomeScreen/> */}
-      // </SafeAreaView>
-      // </ScrollView>
     );
   }
 }

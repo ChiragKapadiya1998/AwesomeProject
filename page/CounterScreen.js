@@ -3,7 +3,7 @@ import { Button, View ,Text } from 'react-native';
 
 
 
-const CounterScreen = () => {
+const CounterScreen = ({navigation}) => {
      const [Counter ,setCounter] = useState(0);
 
     return (
