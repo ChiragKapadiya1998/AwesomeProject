@@ -1,53 +1,25 @@
 import React from 'react';  
 import { View, Text, TextInput,Button,StyleSheet } from 'react-native';  
+import { ScrollView } from 'react-native-gesture-handler';
 
 
-
-export default  class HomeScreen extends React.Component {  
-    render() {  
+ const HomeScreen= ({navigation}) =>  {  
+     
         return (  
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>  
-                <Text>Home Screen</Text> 
-                <Button style={style.button} title="Click Me"/>
-                <Text style={style.button}>Click Me</Text>
-                <Profile/> 
-            </View>  
-        );  
-    }  
-}  
-class Profile extends React.Component{
-    render(){
-        return(
-            <View>
-                <Text>
-                    Profile
-                </Text>
-                <App />
-            </View>
-        );
-    }
-}
-function App(){
-    const [text, setText] = React.useState('');
-    return(
-        <View>
-            <Text>bnvcn</Text>
-            <View>
-                <TextInput
-                style={{width:400}}
-                label="Email"
-                value={text}
-                onChangeText={text => setText(()=>console.log(text))}
-                />
-            </View>
-        </View>
-    )
-}
+            <ScrollView>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>  
+                    <Text>Home Screen</Text> 
+                    <Button title='Go To ListScreen ' onPress={() => navigation.navigate('List')}/>
+                    <Button title='Go To Buttonscreen' onPress={() => navigation.navigate('Buttons')}/>
+                    <Button title='Go To ImageScreen' onPress={() => navigation.navigate('Img')}/>
+                    <Button title='Go To DemoScreen' onPress={() => navigation.navigate('DemoScreen')}/>
+                    <Button title='Go To CounterScreen' onPress={() => navigation.navigate('CounterScreen')}/>
 
-const style=StyleSheet.create({
-button:{
-  margin: 50,
-  borderColor:'red',
-  borderRadius:2
-},
-});
+                    
+                </View>  
+            </ScrollView>
+        );  
+ 
+}  
+
+export default HomeScreen;

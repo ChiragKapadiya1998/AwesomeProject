@@ -7,7 +7,9 @@ export default class Demo extends Component {
     render() {
         return (
             <View>
-                <Text onPress={()=>console.log({TextInput})}>Ravi kapadiya</Text>
+            <Button title="HomeScreen" onPress={()=>this.props.navigation.navigate('Home')}/>
+
+                <Text>Ravi kapadiya</Text>
 
                 <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"

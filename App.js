@@ -1,60 +1,41 @@
 import React, { Component } from "react";
-import {StyleSheet,ScrollView, Button, Text, View ,SafeAreaView,Image, Alert,TouchableOpacity,} from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Demo from './page/Demo';
-import HomeScreen from './page/HomeScreen'
+import HomeScreen from './page/HomeScreen';
+import ImageScreen from './page/ImageScreen';
+import ListScreen from "./page/ListScreen";
+import ButtonScreen from "./page/ButtonScreen";
+import Counter from './page/CounterScreen'
+const Stack = createStackNavigator();
 class App extends Component {
-  state = { myState: "chirag kapadiya",};
-   updateState = () => this.setState({myState: 'The state is updated'  })
- 
+
   render(props) {
     return (
-      <ScrollView>  
-      <SafeAreaView style={styles.container}>
-      <View >
-        <Text>chirag kapadiya  </Text>
-       <Button style={styles.button}  title={this.state.myState}  onPress={this.updateState} >
-         {this.state.myState}
-        </Button>
-      </View>
-      <View >
-        <Text style={styles.text} onPress={this.updateState}>
-           <Text> {this.state.myState}</Text>
-        </Text>
-      </View>
-      <TouchableOpacity onPress={()=>{Alert.alert("You need to...")}}>
-      <Image 
-         source={require('./image/4.jpeg')} 
-         style={{height:250,width:250,margin:20,}}
-         />
-         <Image 
-         source={require('./image/5.jpeg')} 
-         style={{height:250,width:250,margin:20,}}
-         />
-         <Image 
-         source={require('./image/2.jpeg')} 
-         style={{height:250,width:250,margin:20,}}
-         />
-         </TouchableOpacity>
-      <Demo/>
-      <HomeScreen/>
-      </SafeAreaView>
-      </ScrollView>
+      <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="List" component={ListScreen} />
+        <Stack.Screen name="Img" component={ImageScreen} />
+        <Stack.Screen name="Buttons" component={ButtonScreen} />
+        <Stack.Screen name="DemoScreen" component={Demo} />
+        <Stack.Screen name="CounterScreen" component={Counter} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
+
+      // <ScrollView>  
+      // <SafeAreaView >
+      //   <View >
+      //     <Text>chirag kapadiya  </Text>
+      //   </View>
+      //     <ListScreen/>
+      //     {/* <ImageScreen/> */}
+      //     {/* <Demo/> */}
+      //     {/* <HomeScreen/> */}
+      // </SafeAreaView>
+      // </ScrollView>
     );
   }
 }
-const styles=StyleSheet.create({
-  contioner: {
-    marginTop:20,
-    flex:1,    
-  },
-  text: {
-    height:30,
-    borderRadius: 2,
-    color:'#fff',
-    fontSize: 20,
-    backgroundColor: 'red'
-  }
-
-})
-
 export default  App;
