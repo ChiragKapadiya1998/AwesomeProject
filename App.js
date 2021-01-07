@@ -11,6 +11,9 @@ import ColorScreen from './page/ColorScreen';
 import SquareScreen from './page/SquareScreen';
 import Reducer from './page/Reducer';
 import Datafetch from './page/Datafetch';
+import TextScreen from './page/TextScreen';
+import BoxScreen from './page/BoxScreen'
+
 const Stack = createStackNavigator();
 class App extends Component {
 
@@ -28,6 +31,8 @@ class App extends Component {
         <Stack.Screen name="SquareScreen" component={SquareScreen} />
         <Stack.Screen name="ReducerScreen" component={Reducer} />
         <Stack.Screen name="Datafetch" component={Datafetch} />
+        <Stack.Screen name="TextScreen" component={TextScreen} />
+        <Stack.Screen name="BoxScreen" component={BoxScreen} />
       </Stack.Navigator>
     </NavigationContainer>
     );
